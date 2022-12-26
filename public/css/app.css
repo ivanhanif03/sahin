@@ -501,6 +501,9 @@ video {
     max-width: 1536px;
   }
 }
+.collapse {
+  visibility: collapse;
+}
 .static {
   position: static;
 }
@@ -510,8 +513,42 @@ video {
 .relative {
   position: relative;
 }
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-1 {
+  order: 1;
+}
+.col-auto {
+  grid-column: auto;
+}
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.mt-0 {
+  margin-top: 0px;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .block {
   display: block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
@@ -519,23 +556,11 @@ video {
 .table {
   display: table;
 }
-.h-screen {
-  height: 100vh;
-}
-.h-9 {
-  height: 2.25rem;
-}
 .min-h-screen {
   min-height: 100vh;
 }
-.w-64 {
-  width: 16rem;
-}
-.w-9 {
-  width: 2.25rem;
-}
-.flex-row {
-  flex-direction: row;
+.resize {
+  resize: both;
 }
 .items-center {
   align-items: center;
@@ -543,15 +568,11 @@ video {
 .justify-center {
   justify-content: center;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .border {
   border-width: 1px;
-}
-.border-r {
-  border-right-width: 1px;
-}
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 .bg-gradient-to-tr {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
@@ -564,16 +585,40 @@ video {
 .to-blue-300 {
   --tw-gradient-to: #93c5fd;
 }
-.px-9 {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
+.p-0 {
+  padding: 0px;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .text-center {
   text-align: center;
 }
+.text-start {
+  text-align: start;
+}
+.text-end {
+  text-align: end;
+}
+.align-middle {
+  vertical-align: middle;
+}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-medium {
   font-weight: 500;

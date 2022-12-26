@@ -37,6 +37,12 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('/user', 'User::index', ['filter' => 'role:admin']);
+$routes->get('/user/index', 'User::index', ['filter' => 'role:admin']);
+
+$routes->get('/order', 'Order::index', ['filter' => 'role:admin,user']);
+$routes->get('/order/index', 'Order::index', ['filter' => 'role:admin,user']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
