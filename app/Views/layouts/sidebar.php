@@ -5,7 +5,9 @@
         </a>
 
         <ul class="sidebar-nav">
-            <li class="sidebar-item active">
+            <li class="sidebar-item <?php if ($menu == 'dashboard') {
+                                        echo 'active';
+                                    } ?>">
                 <a class="sidebar-link" href="<?= base_url() ?>">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
@@ -16,16 +18,20 @@
             </li>
 
             <?php if (in_groups('admin')) : ?>
-                <li class="sidebar-item">
+                <li class="sidebar-item <?php if ($menu == 'users') {
+                                            echo 'active';
+                                        } ?>">
                     <a class="sidebar-link" href="<?= base_url('user') ?>">
-                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
                     </a>
                 </li>
             <?php endif; ?>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('order') ?>">
-                    <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Order</span>
+                <a class="sidebar-link <?php if ($menu == 'orders') {
+                                            echo 'active';
+                                        } ?>" href="<?= base_url('order') ?>">
+                    <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Orders</span>
                 </a>
             </li>
         </ul>

@@ -6,7 +6,7 @@
 
         <div class="mb-3 d-flex justify-content-between">
             <h1 class="h3 d-inline align-middle">Users</h1>
-            <a href="<?= base_url('user/register') ?>" class="btn btn-lg btn-success"><i class="align-middle" data-feather="plus-square"></i> Add User</a>
+            <a href="<?= base_url('user/register') ?>" class="btn btn-lg btn-success"><i class="align-middle" data-feather="plus-square"></i> Create New User</a>
         </div>
 
         <div class="row">

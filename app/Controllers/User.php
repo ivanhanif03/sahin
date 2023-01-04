@@ -6,20 +6,20 @@ use App\Models\UsersModel;
 
 class User extends BaseController
 {
-    protected $UserModel;
+    protected $UsersModel;
 
     public function __construct()
     {
-        $this->UserModel = new UsersModel();
+        $this->UsersModel = new UsersModel();
     }
 
     public function index()
     {
         $data = [
             'title' => 'User List',
-            'menu' => 'user-list',
+            'menu' => 'users',
             'validation' => \Config\Services::validation(),
-            'users' => $this->UserModel->getUser()
+            'users' => $this->UsersModel->getUser()
         ];
 
         return view('user/index', $data);
@@ -29,7 +29,7 @@ class User extends BaseController
     {
         $data = [
             'title' => 'User Register',
-            'menu' => 'user-list',
+            'menu' => 'users',
         ];
 
         return view('auth/register', $data);
@@ -39,9 +39,9 @@ class User extends BaseController
     {
         $data = [
             'title' => 'User Edit',
-            'menu' => 'user-edit',
+            'menu' => 'users',
             'validation' => \Config\Services::validation(),
-            'user' => $this->UserModel->getUser($id)
+            'user' => $this->UsersModel->getUser($id)
         ];
 
         return view('user/edit', $data);
@@ -54,11 +54,11 @@ class User extends BaseController
             'username' => 'required|alpha_numeric_space|min_length[3]|max_length[30]',
             'email'    => 'required|valid_email',
             'name'     => 'required',
-            'phone'    => 'required|min_length[9]',
+            'phone'    => 'required|min_length[9]|max_length[13]',
         ])) {
             return redirect()->to('/user/edit')->withInput()->with('errors', $this->validator->getErrors());
         }
-        $this->UserModel->save([
+        $this->UsersModel->save([
             'id' => $id,
             'username' => $this->request->getVar('username'),
             'email' => $this->request->getVar('email'),
@@ -73,7 +73,7 @@ class User extends BaseController
 
     public function delete($id)
     {
-        $this->UserModel->delete($id);
+        $this->UsersModel->delete($id);
         session()->setFlashdata('pesan', 'Data deleted successfully');
         return redirect()->to('user/index');
     }
