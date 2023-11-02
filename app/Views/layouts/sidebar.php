@@ -8,7 +8,7 @@
             <li class="sidebar-item <?php if ($menu == 'dashboard') {
                                         echo 'active';
                                     } ?>">
-                <a class="sidebar-link" href="<?= base_url() ?>">
+                <a class="sidebar-link" href="<?= base_url('dashboard') ?>">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
