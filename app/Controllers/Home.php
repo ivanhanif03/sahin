@@ -13,4 +13,14 @@ class Home extends BaseController
 
         return view('dashboard', $data);
     }
+
+    public function a()
+    {
+        $data = [
+            'title' => 'Tes',
+            'menu' => 'dashboard',
+        ];
+
+        return view('welcome_message', $data);
+    }
 }

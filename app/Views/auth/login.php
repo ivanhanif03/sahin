@@ -76,15 +76,6 @@
                                     </form>
 
                                     <hr>
-
-                                    <?php if ($config->allowRegistration) : ?>
-                                        <div class="d-flex justify-content-between">
-                                            <p><a href="<?= url_to('register') ?>"><?= lang('Auth.needAnAccount') ?></a></p>
-                                        <?php endif; ?>
-                                        <?php if ($config->activeResetter) : ?>
-                                            <p><a href="<?= url_to('forgot') ?>"><?= lang('Auth.forgotYourPassword') ?></a></p>
-                                        </div>
-                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
