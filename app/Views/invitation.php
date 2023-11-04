@@ -23,13 +23,45 @@
     <!-- CSS End -->
 
     <style>
-        h1 {
-            font-size: 450%;
-        }
-
         .bg-cover {
             background-image: url("img/bg-cover.jpg");
             height: 100vh;
+        }
+
+        /* Declare text styles */
+        h1,
+        h2,
+        p {
+            /* Font minimum, preferred and maximum value */
+            font-size: clamp(var(--min), var(--val), var(--max));
+        }
+
+        /* Font size variables */
+        h1 {
+            --min: 4em;
+            /* minimum value */
+            --val: 5vw;
+            /* preferred value = 5% viewport width */
+            --max: 5em;
+            /* maximum value */
+        }
+
+        h2 {
+            --min: 1.5em;
+            /* minimum value */
+            --val: 4vw;
+            /* preferred value = 4% viewport width */
+            --max: 2.25em;
+            /* maximum value */
+        }
+
+        p {
+            --min: 1em;
+            /* minimum value */
+            --val: 2.5vw;
+            /* preferred value = 2.5% viewport width */
+            --max: 1.5em;
+            /* maximum value */
         }
     </style>
 </head>
@@ -46,7 +78,7 @@
                         <h1>Irti & Ivan</h1>
                     </div>
                     <div class="col-12">
-                        <h4>30 April 2024</h4>
+                        <p>30 April 2024</p>
                     </div>
                     <div class="col-12 mt-5">
                         Kepada Yth. <br>
@@ -65,13 +97,13 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
+                        <img src="<?= base_url('img/carousel/1.jpg') ?>" class="d-block w-100">
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
+                        <img src="<?= base_url('img/carousel/2.jpg') ?>" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
+                        <img src="<?= base_url('img/carousel/3.jpg') ?>" class="d-block w-100">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -84,13 +116,13 @@
                 </button>
             </div>
 
-            <div class="row mt-5 ps-5 pe-5">
+            <div class="row mt-5">
                 <div class="col-12 text-center">
                     <h2>The Wedding</h2>
                     <div style="font-family:Vidaloka;">
                         <h1>Irti & Ivan</h1>
                     </div>
-                    <h4>30 April 2024</h4>
+                    <h4 class="fs-sm-n">30 April 2024</h4>
                     <div class="row mt-5" id="countdown">
                     </div>
                 </div>
@@ -148,7 +180,7 @@
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+    var countDownDate = new Date("Apr 30, 2024 07:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -166,7 +198,7 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
-        document.getElementById("countdown").innerHTML = '<div class="col-lg-3 col-sm-12"></div><div class="col-lg-6 col-sm-12 text-center"><div class="row"><div class="col-3"><div class="card"><div class="card-body"><h2>' + days + '</h2></div><div class="card-footer bg-primary text-white">Days</div></div> </div> <div class="col-3"> <div class="card"> <div class="card-body"><h2>' + hours + '</h2></div><div class="card-footer bg-primary text-white">Hours</div></div></div><div class="col-3"><div class="card"><div class="card-body"><h2>' + minutes + '</h2></div><div class="card-footer bg-primary text-white">Minutes</div></div></div> <div class="col-3"> <div class="card"><div class="card-body"><h2>' + seconds + '</h2></div><div class="card-footer bg-primary text-white">Seconds</div></div></div></div></div><div class="col-lg-3 col-sm-12"></div>';
+        document.getElementById("countdown").innerHTML = '<div class="col-lg-3 col-sm-12"></div><div class="col-lg-6 col-sm-12 text-center"><div class="row"><div class="col-3"><div class="card"><div class="card-body"><h4>' + days + '</h4></div><div class="card-footer bg-dark text-white">D</div></div> </div> <div class="col-3"> <div class="card"> <div class="card-body"><h4>' + hours + '</h4></div><div class="card-footer bg-dark text-white">H</div></div></div><div class="col-3"><div class="card"><div class="card-body"><h4>' + minutes + '</h4></div><div class="card-footer bg-dark text-white">M</div></div></div> <div class="col-3"> <div class="card"><div class="card-body"><h4>' + seconds + '</h4></div><div class="card-footer bg-dark text-white">S</div></div></div></div></div><div class="col-lg-3 col-sm-12"></div>';
 
         // If the count down is over, write some text 
         if (distance < 0) {
