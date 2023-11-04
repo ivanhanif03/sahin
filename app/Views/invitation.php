@@ -31,79 +31,72 @@
             background-image: url("img/bg-cover.jpg");
             height: 100vh;
         }
-
-        .carousel-inner .carousel-item {
-            height: 500px;
-            background-size: cover;
-            background-position: center center;
-        }
     </style>
 </head>
 
 <body>
-    <div class="bg-cover" id="cover" style="display: none;">
-        <div class="d-flex align-items-center justify-content-center vh-100">
-            <div class="row text-center">
-                <div class="col-12">
+    <div class="container">
+        <div class="bg-cover" id="cover" style="display: none;">
+            <div class="d-flex align-items-center justify-content-center vh-100">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h2>The Wedding</h2>
+                    </div>
+                    <div class="col-12" style="font-family:Vidaloka;">
+                        <h1>Irti & Ivan</h1>
+                    </div>
+                    <div class="col-12">
+                        <h4>30 April 2024</h4>
+                    </div>
+                    <div class="col-12 mt-5">
+                        Kepada Yth. <br>
+                        <b>Ivan Hanif</b>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <button class="btn btn-primary btn-lg" onclick="hideCover()">
+                            Open Invitation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="main" style="display: block;">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="row mt-5 ps-5 pe-5">
+                <div class="col-12 text-center">
                     <h2>The Wedding</h2>
-                </div>
-                <div class="col-12" style="font-family:Vidaloka;">
-                    <h1>Irti & Ivan</h1>
-                </div>
-                <div class="col-12">
+                    <div style="font-family:Vidaloka;">
+                        <h1>Irti & Ivan</h1>
+                    </div>
                     <h4>30 April 2024</h4>
-                </div>
-                <div class="col-12 mt-5">
-                    Kepada Yth. <br>
-                    <b>Ivan Hanif</b>
-                </div>
-                <div class="col-12 mt-4">
-                    <button class="btn btn-primary btn-lg" onclick="hideCover()">
-                        Open Invitation
-                    </button>
+                    <div class="row mt-5" id="countdown">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="main" style="display: block;">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/bg-cover.jpg" class="d-block w-100" alt="Foto 1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Foto 1</h5>
-                        <p>Deskripsi 1</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://mdbootstrap.com/img/new/fluid/city/018.jpg" class="d-block w-100" alt="Foto 2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Foto 2</h5>
-                        <p>Deskripsi 2</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://mdbootstrap.com/img/new/fluid/city/018.jpg" class="d-block w-100" alt="Foto 3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Foto 3</h5>
-                        <p>Deskripsi 3</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <b>
-                        Assalamualaikum Warahmatullah wabarakatu
-                    </b>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora porro eligendi quod vitae laboriosam eum ipsa harum voluptate numquam recusandae.
-                    </p>
-                </div>
-            </div>
-        </div>
 </body>
 
 <!-- Footer Start -->
@@ -151,6 +144,36 @@
             main.style.display = "none";
         }
     }
+</script>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("countdown").innerHTML = '<div class="col-lg-3 col-sm-12"></div><div class="col-lg-6 col-sm-12 text-center"><div class="row"><div class="col-3"><div class="card"><div class="card-body"><h2>' + days + '</h2></div><div class="card-footer bg-primary text-white">Days</div></div> </div> <div class="col-3"> <div class="card"> <div class="card-body"><h2>' + hours + '</h2></div><div class="card-footer bg-primary text-white">Hours</div></div></div><div class="col-3"><div class="card"><div class="card-body"><h2>' + minutes + '</h2></div><div class="card-footer bg-primary text-white">Minutes</div></div></div> <div class="col-3"> <div class="card"><div class="card-body"><h2>' + seconds + '</h2></div><div class="card-footer bg-primary text-white">Seconds</div></div></div></div></div><div class="col-lg-3 col-sm-12"></div>';
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
 </script>
 
 </html>
