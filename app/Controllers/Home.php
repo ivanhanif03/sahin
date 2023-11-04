@@ -11,7 +11,7 @@ class Home extends BaseController
             'menu' => 'dashboard',
         ];
 
-        return view('dashboard', $data);
+        return view('invitation', $data);
     }
 
     public function a()
